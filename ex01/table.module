@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <?php
+        $datas = [
+            ["João", "M", "Portugal"],
+            ["Maria", "F", "Brasil"],
+            ["Antónia", "M", "Angola"]
+        ]
+    ?>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>País</th>
+            </tr>
+            <?php for($i = 0; $i < count($datas); $i++):?>
+             <tr>
+                 <?php foreach($datas[$i] as $inData): ?>
+                    <td><?= $inData?></td>
+                 <?php endforeach; ?>
+             </tr>
+            <?php endfor;?>
+        </table>
+
+</body>
+</html>
